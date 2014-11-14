@@ -56,7 +56,7 @@ public class ChmLzxState implements Cloneable {
         return a==null ? null : (short[]) a.clone();
     }
     
-    //@Override
+    @Override
     public ChmLzxState clone() {
         try {
             ChmLzxState clone = (ChmLzxState)super.clone();
