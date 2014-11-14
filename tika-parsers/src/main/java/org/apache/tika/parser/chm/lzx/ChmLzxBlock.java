@@ -868,7 +868,7 @@ public class ChmLzxBlock {
         if (chmPrevLzxBlock == null && getBlockLength() < Integer.MAX_VALUE)
             setState(new ChmLzxState((int) getBlockLength()));
         else
-            //use clone to avoid changing an cached or to be cache block
+            //use clone to avoid changing an cached or to be cached block
             setState(chmPrevLzxBlock.getState().clone()); 
     }
 

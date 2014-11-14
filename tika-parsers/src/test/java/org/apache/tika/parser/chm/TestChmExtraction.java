@@ -49,7 +49,17 @@ public class TestChmExtraction {
     private final List<String> files = Arrays.asList(
             "/test-documents/testChm.chm",
             "/test-documents/testChm2.chm",
-            "/test-documents/testChm3.chm");
+            "/test-documents/chm/admin.chm",
+            "/test-documents/chm/cmak_ops.chm",
+            "/test-documents/chm/comexp.chm",
+            "/test-documents/chm/gpedit.chm",
+            //"/test-documents/chm/IMJPCL.chm", //contains pages without </html>
+            //"/test-documents/chm/IMJPCLE.chm", //contains pages without </html>
+            //"/test-documents/chm/IMTCEN.chm", //contains pages without </html>
+            "/test-documents/chm/tcpip.chm",
+            "/test-documents/chm/wmicontrol.chm"
+            
+    );
 
     @Test
     public void testGetText() throws Exception {
@@ -199,6 +209,7 @@ public class TestChmExtraction {
     public void test_TIKA_1446() throws Exception {
       File chmFolder = new File("./target/test-classes/test-documents/chm/");
       for (String fileName : chmFolder.list()) {
+          System.out.println(fileName);
         File file = new File(chmFolder, fileName);
         InputStream stream = new FileInputStream(file);
         testingChm(stream);
